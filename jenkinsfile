@@ -11,8 +11,7 @@ node('linux') {
         sh "aws s3 cp /workspace/java-pipeline/dist/rectangle-${env.BUILD_NUMBER}.jar s3://sharifah11-assignment-4"
     }
     stage('Report'){
-        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-    // some block
+       withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'd02b01fc-5257-40e8-8dc1-947d87e05a41', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
       }
     }
 }
